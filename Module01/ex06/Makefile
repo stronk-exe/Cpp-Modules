@@ -5,14 +5,14 @@
 #                                                     +:+ +:+         +:+      #
 #    By: ael-asri <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2022/07/22 13:00:29 by ael-asri          #+#    #+#              #
-#    Updated: 2022/07/22 13:00:30 by ael-asri         ###   ########.fr        #
+#    Created: 2022/07/22 23:30:09 by ael-asri          #+#    #+#              #
+#    Updated: 2022/07/22 23:30:10 by ael-asri         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = harl
+NAME = harlFilter
 
-SRCS =  Harl.cpp\
+SRCS =  HarlFilter.cpp\
 		main.cpp
 
 OBJS = $(SRCS:.cpp=.o)

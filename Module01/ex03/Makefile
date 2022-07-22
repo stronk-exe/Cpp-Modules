@@ -26,6 +26,9 @@ all: $(NAME)
 $(NAME): $(OBJS)
 	c++ $(FLAGS) $^ -o $@
 
+%.o : %.cpp
+	@	c++ $(CFLAGS) -c $(SRCS)
+
 clean:
 	rm -f $(OBJS)
 

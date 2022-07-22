@@ -1,25 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Harl.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ael-asri <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/22 13:00:34 by ael-asri          #+#    #+#             */
-/*   Updated: 2022/07/22 13:00:36 by ael-asri         ###   ########.fr       */
+/*   Created: 2022/07/22 23:30:04 by ael-asri          #+#    #+#             */
+/*   Updated: 2022/07/22 23:30:06 by ael-asri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Harl.hpp"
+#ifndef HARLFILTER_HPP
+#define	HARLFILTER_HPP
 
-int main(int ac, char **av)
+#include <iostream>
+#include <string>
+
+class HarlFilter
 {
-	if (ac == 2)
-	{
-		Harl hr;
-		hr.complain(av[1]);
-	}
-	else
-		std::cout << "invalid number of arguments\n";
-	return (1);
-}
+	private:
+		void debug( void );
+		void info( void );
+		void warning( void );
+		void error( void );
+	public:
+		void complain( std::string );
+};
+
+#endif

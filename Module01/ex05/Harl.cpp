@@ -34,15 +34,18 @@ void Harl::error( void )
 
 void Harl::complain( std::string level )
 {
-	if (level == "DEBUG")
-		debug();
-	else if (level == "INFO")
-		info();
-	else if (level == "WARNING")
-		warning();
-	else if (level == "ERROR")
-		error();
-	else
-		std::cout << "nope\n";
-	// std::cout << "gg" << std::endl;
+	std::string array[] = {"DEBUG", "INFO", "WARNING", "ERROR"};
+	void	(Harl::*pmf[])(void) = {&Harl::debug, &Harl::info, &Harl::warning, &Harl::error};
+	int	i=0;
+
+	while (i < 4)
+	{
+		if (array[i] == level)
+		{
+			(this->*pmf[i])();
+			return;
+		}
+		i++;
+	}
+	std::cout << "invalid level\n";
 }
