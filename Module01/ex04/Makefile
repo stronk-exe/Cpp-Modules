@@ -5,17 +5,14 @@
 #                                                     +:+ +:+         +:+      #
 #    By: ael-asri <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2022/07/21 19:22:52 by ael-asri          #+#    #+#              #
-#    Updated: 2022/07/21 19:22:53 by ael-asri         ###   ########.fr        #
+#    Created: 2022/07/22 11:17:05 by ael-asri          #+#    #+#              #
+#    Updated: 2022/07/22 11:17:06 by ael-asri         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = main
 
-SRCS =  main.cpp\
-		Weapon.cpp\
-		HumanA.cpp\
-		HumanB.cpp
+SRCS =  main.cpp
 
 OBJS = $(SRCS:.cpp=.o)
 

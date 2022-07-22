@@ -12,18 +12,18 @@
 
 #include "HumanA.hpp"
 
-HumanA::HumanA( Weapon wpn)
-{
-	wp->setType(wpn.getType());
-}
+// HumanA::HumanA( Weapon wpn)
+// {
+// 	wp.setType(wpn.getType());
+// }
 
-HumanA::HumanA( std::string _name, Weapon wpn)
-{
-	name = _name;
-	wp->setType(wpn.getType());
-}
+// HumanA::HumanA( std::string _name, Weapon &wpn)
+// {
+// 	name = _name;
+// 	wp = wpn;
+// }
 
 void	HumanA::attack( void )
 {
-	std::cout << name << " attacks with their " << wp->getType() << std::endl;
+	std::cout << name << " attacks with their " << wp.getType() << std::endl;
 }

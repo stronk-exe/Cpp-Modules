@@ -24,6 +24,5 @@ const	std::string	&Weapon::getType( void )
 
 void	Weapon::setType( std::string ty )
 {
-	std::cout << "Yo-"+ty+"-\n";
 	type = ty;
 }

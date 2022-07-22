@@ -21,8 +21,12 @@ class HumanB
 {
 	private:
 		std::string	name;
-		Weapon		wp;
+		Weapon		*wp;
 	public:
+		HumanB( std::string name ): name(name) {};
+		// HumanB( std::string name, Weapon wp): name(name), wp(wp) {};
+		// HumanB( std::string name, Weapon wp): name(name), wp(wp) {};
+		void	setWeapon( Weapon );
 		void	attack( void );
 };
 

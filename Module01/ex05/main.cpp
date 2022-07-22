@@ -1,28 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   HumanB.cpp                                         :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ael-asri <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/21 19:22:36 by ael-asri          #+#    #+#             */
-/*   Updated: 2022/07/21 19:22:38 by ael-asri         ###   ########.fr       */
+/*   Created: 2022/07/22 13:00:34 by ael-asri          #+#    #+#             */
+/*   Updated: 2022/07/22 13:00:36 by ael-asri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "HumanB.hpp"
+#include "Harl.hpp"
 
-// HumanB::HumanB( std::string name )
-// {
-// 	name = name;
-// }
-
-void	HumanB::setWeapon( Weapon wpn )
+int main(int ac, char **av)
 {
-	wp = &wpn;
-}
-
-void	HumanB::attack( void )
-{
-	std::cout << name << " attacks with their " << wp->getType() << std::endl;
+	if (ac == 2)
+	{
+		Harl h = Harl::c;
+		(h.*complain) (av[1]);
+	}
+	else
+		std::cout << "invalid number of arguments\n";
+	return (1);
 }

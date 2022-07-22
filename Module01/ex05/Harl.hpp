@@ -1,28 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   HumanB.cpp                                         :+:      :+:    :+:   */
+/*   Harl.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ael-asri <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/21 19:22:36 by ael-asri          #+#    #+#             */
-/*   Updated: 2022/07/21 19:22:38 by ael-asri         ###   ########.fr       */
+/*   Created: 2022/07/22 13:00:22 by ael-asri          #+#    #+#             */
+/*   Updated: 2022/07/22 13:00:24 by ael-asri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "HumanB.hpp"
+#ifndef HARL_HPP
+#define	HARL_HPP
 
-// HumanB::HumanB( std::string name )
-// {
-// 	name = name;
-// }
+#include <iostream>
+#include <string>
 
-void	HumanB::setWeapon( Weapon wpn )
+class Harl
 {
-	wp = &wpn;
-}
+	private:
+		void debug( void );
+		void info( void );
+		void warning( void );
+		void error( void );
+	public:
+		void complain( std::string );
+};
 
-void	HumanB::attack( void )
-{
-	std::cout << name << " attacks with their " << wp->getType() << std::endl;
-}
+#endif
