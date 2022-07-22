@@ -1,5 +1,17 @@
-#ifndef SAMPLE_CLASS_H // CONTACT
-#define SAMPLE_CLASS_H // CONTACT
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Header.cpp                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ael-asri <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/07/05 19:28:53 by ael-asri          #+#    #+#             */
+/*   Updated: 2022/07/05 19:28:54 by ael-asri         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#ifndef HEADER_HPP
+#define HEADER_HPP
 
 #include <iostream>
 #include <string>
@@ -13,7 +25,7 @@ class Contact
 		std::string		firstName;
         std::string		lastName;
         std::string 	nickName;
-        std::string     		phoneNumber;
+        std::string     phoneNumber;
         std::string		darkestSecret;
 	public:
 		void	setFirstName(std::string);
@@ -31,10 +43,12 @@ class Contact
 class	PhoneBook
 {
 	private:
-		Contact	ct;
+		Contact	ct[8];
 	public:
-		Contact getContact(void);
-		void	setContact(Contact);
+		int		add(int);
+		void	search(int);
+		// Contact getContact(void);
+		// void	setContact(Contact);
 };
 
 #endif

@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ael-asri <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/07/05 19:29:11 by ael-asri          #+#    #+#             */
+/*   Updated: 2022/07/05 19:29:12 by ael-asri         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "Header.hpp"
 
 int	s_isalpha(std::string s)
@@ -42,7 +54,7 @@ int	s_isalphanum(std::string s)
 	return (1);
 }
 
-int add(Contact *ct, int i)
+int PhoneBook::add(int i)
 {
 	std::string t;
     if (i == 8)
@@ -52,7 +64,7 @@ int add(Contact *ct, int i)
     while (1)
 	{
         std::cout << ">> First name?" << std::endl;
-        std::cin >> t;
+        std::getline(std::cin, t);
         if (s_isalpha(t) && !t.empty())
         {
             ct[i].setFirstName(t);
@@ -65,7 +77,7 @@ int add(Contact *ct, int i)
     while (1)
 	{
         std::cout << ">> Last name?" << std::endl;
-        std::cin >> t;
+        std::getline(std::cin, t);
         if (s_isalpha(t) && !t.empty())
         {
             ct[i].setLastName(t);
@@ -78,7 +90,7 @@ int add(Contact *ct, int i)
     while (1)
 	{
         std::cout << ">> nick name?" << std::endl;
-        std::cin >> t;
+        std::getline(std::cin, t);
         if (s_isalphanum(t) && !t.empty())
         {
             ct[i].setNickName(t);
@@ -90,8 +102,8 @@ int add(Contact *ct, int i)
     /*          phoneNumber           */
     while (1)
 	{
-        std::cout << ">> Phone name?" << std::endl;
-        std::cin >> t;
+        std::cout << ">> Phone number?" << std::endl;
+        std::getline(std::cin, t);
         if (s_isdigit(t) && t.length() == 10)
         {
             ct[i].setPhoneNumber(t);
@@ -104,7 +116,7 @@ int add(Contact *ct, int i)
     while (1)
 	{
         std::cout << ">> Darkest secret?" << std::endl;
-        std::cin >> t;
+        std::getline(std::cin, t);
         if (s_isalphanum(t) && !t.empty())
         {
             ct[i].setDarkestSecret(t);
@@ -116,9 +128,9 @@ int add(Contact *ct, int i)
     return (i);
 }
 
-void	search(Contact *ct, int x)
+void	PhoneBook::search(int x)
 {
-    if (x>=0)
+    if (x>0)
     {
         std::cout << "--------------------------------------------" << std::endl;
         std::cout << "|    index"; //index
@@ -184,7 +196,7 @@ void	search(Contact *ct, int x)
 int main()
 {
 	std::string cmd;
-	Contact     ct[8];
+	PhoneBook   pb;
     int         i;
     int         s;
 
@@ -196,11 +208,11 @@ int main()
         std::cin >> cmd;
         if (!cmd.compare("ADD"))
     	{
-        	i = add(ct, i);
+        	i = pb.add(i);
             s++;
         }
         else if (!cmd.compare("SEARCH"))
-        	search(ct, s);
+			pb.search(s);
         else if (!cmd.compare("EXIT"))
             break;
     }
