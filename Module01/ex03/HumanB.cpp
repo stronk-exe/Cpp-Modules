@@ -17,7 +17,7 @@
 // 	name = name;
 // }
 
-void	HumanB::setWeapon( Weapon wpn )
+void	HumanB::setWeapon( Weapon &wpn )
 {
 	wp = &wpn;
 }

@@ -15,8 +15,10 @@
 int main()
 {
 	Zombie *z;
-	z = z->newZombie("stronk");
+	z = newZombie("stronk");
 	z->announce();
-	z->randomChump("gg");
-	z->~Zombie();
+	randomChump("gg");
+	randomChump("goat");
+	randomChump("nadi");
+	delete(z);
 }

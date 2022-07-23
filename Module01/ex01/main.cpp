@@ -14,20 +14,17 @@
 
 int main()
 {
-	Zombie *z;
-	z = z->zombieHorde(3, "stronk");
-	int i=0;
-	while (i<3)
+	int i=0, N=3;
+	Zombie *z = zombieHorde(N, "stronk");
+	if (!z)
+	{
+		std::cout << "Memory allocation failed!" << std::endl;
+		exit(1);
+	}
+	while (i<N)
 	{
 		z[i].announce();
 		i++;
 	}
-	// delete(z);
-	// i = 0;
-	// while (i<3)
-	// {
-	// 	i++;
-	// }
-	z->~Zombie();
-	system("leaks zombieHorde");
+	delete[] z;
 }

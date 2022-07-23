@@ -12,13 +12,18 @@
 
 #include "Zombie.hpp"
 
-Zombie* Zombie::zombieHorde( int N, std::string name )
+Zombie* zombieHorde( int N, std::string name )
 {
 	Zombie *z = new Zombie[N];
+	if (!z)
+	{
+		std::cout << "Memory allocation failed!" << std::endl;
+		exit(1);
+	}
 	int	i=0;
 	while (i<N)
 	{
-		z[i].name = name;
+		z[i].setName(name);
 		i++;
 	}
 	return (z);

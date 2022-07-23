@@ -12,22 +12,36 @@
 
 #include "Zombie.hpp"
 
+Zombie::Zombie( std::string _name )
+{
+	name = _name;
+}
+
 void	Zombie::announce()
 {
 	std::cout << name << ": BraiiiiiiinnnzzzZ..." << std::endl;
 }
 
-Zombie *Zombie::newZombie( std::string _name )
+Zombie *newZombie( std::string name )
 {
-	Zombie *z = new Zombie;
-	z->name = _name;
+	Zombie *z = new Zombie(name);
+	if (!z)
+	{
+		std::cout << "Memory allocation failed!" << std::endl;
+		exit(1);
+	}
 	return (z);
 }
 
-void	Zombie::randomChump( std::string name )
+void	randomChump( std::string name )
 {
-	Zombie *z = new Zombie;
-	z = z->newZombie(name);
+	Zombie *z = new Zombie(name);
+	if (!z)
+	{
+		std::cout << "Memory allocation failed!" << std::endl;
+		exit(1);
+	}
+	z = newZombie(name);
 	z->announce();
 }
 

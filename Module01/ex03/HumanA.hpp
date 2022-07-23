@@ -21,10 +21,10 @@ class HumanA
 {
 	private:
 		std::string	name;
-		Weapon		wp;
+		Weapon		&wp;
 	public:
 	//	HumanA( Weapon );
-		HumanA( std::string name, Weapon wp): name(name), wp(wp) {};
+		HumanA( std::string name, Weapon &wp): name(name), wp(wp) {};
 		void	attack( void );
 };
 
