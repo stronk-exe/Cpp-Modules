@@ -14,31 +14,38 @@
 
 ClapTrap::ClapTrap()
 {
-	std::cout << "Default constractor called!" << std::endl;
+	std::cout << "ClapTrap Default constractor called!" << std::endl;
+	name = "stronk";
+	hitPoints = 10;
+	energyPoints = 10;
+	attackDamage = 0;
 }
 
 ClapTrap::ClapTrap( std::string _name )
 {
-	std::cout << "Copy constractor called!" << std::endl;
+	std::cout << "ClapTrap Copy constractor called!" << std::endl;
 	name = _name;
 	hitPoints = 10;
 	energyPoints = 10;
 	attackDamage = 0;
 }
 
-// ClapTrap &ClapTrap::operator=( ClapTrap const & ct )
-// {
-// 	std::cout << "Copy assignment operator called!" << std::endl;
-// 	this->name = ct.name;
-// 	return this;
-// }
+ClapTrap &ClapTrap::operator=( ClapTrap const & ct )
+{
+	std::cout << "Copy assignment operator called!" << std::endl;
+	name = ct.name;
+	hitPoints = ct.hitPoints;
+	energyPoints = ct.energyPoints;
+	attackDamage = ct.attackDamage;
+	return *this;
+}
 
 void ClapTrap::attack(const std::string& target)
 {
-	if (hitPoints && energyPoints)
+	if (/*this->hitPoints > 0 && */energyPoints > 0)
 	{
 		std::cout << "ClapTrap " << name << " attacks " << target << " caising " << attackDamage << " points of damage!" << std::endl;
-		attackDamage -= 1;
+		energyPoints -= 1;
 	}
 	else
 		std::cout << "ClapTrap has no hit points or energy points left!" << std::endl;
@@ -47,18 +54,21 @@ void ClapTrap::attack(const std::string& target)
 void ClapTrap::takeDamage(unsigned int amount)
 {
 	std::cout << "ClapTrap " << name << " attacked taking " << amount << " points of damage!" << std::endl;
-	hitPoints -= amount;
-	energyPoints -= 1;
+	if (amount > hitPoints)
+		hitPoints = 0;
+	else
+		hitPoints -= amount;
+	// energyPoints -= 1;
 }
 
 void ClapTrap::beRepaired(unsigned int amount)
 {
 	std::cout << "ClapTrap " << name << " repaires itself getting " << amount << " hit points!" << std::endl;
 	hitPoints += amount;
-	energyPoints += 1;
+	// energyPoints += 1;
 }
 
 ClapTrap::~ClapTrap()
 {
-	std::cout << "Deconstractor called!" << std::endl;
+	std::cout << "ClapTrap Deconstractor called!" << std::endl;
 }

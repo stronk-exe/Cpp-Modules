@@ -15,7 +15,7 @@
 ClapTrap::ClapTrap()
 {
 	std::cout << "ClapTrap Default constractor called!" << std::endl;
-	name = "stronk";
+	name = "stronk_clap_name";
 	hitPoints = 10;
 	energyPoints = 10;
 	attackDamage = 0;
@@ -24,7 +24,7 @@ ClapTrap::ClapTrap()
 ClapTrap::ClapTrap( std::string _name )
 {
 	std::cout << "ClapTrap Copy constractor called!" << std::endl;
-	name = _name;
+	name = _name+"_clap_name";
 	hitPoints = 10;
 	energyPoints = 10;
 	attackDamage = 0;
@@ -33,13 +33,16 @@ ClapTrap::ClapTrap( std::string _name )
 ClapTrap &ClapTrap::operator=( ClapTrap const & ct )
 {
 	std::cout << "Copy assignment operator called!" << std::endl;
-	this->name = ct.name;
+	name = ct.name;
+	hitPoints = ct.hitPoints;
+	energyPoints = ct.energyPoints;
+	attackDamage = ct.attackDamage;
 	return *this;
 }
 
 void ClapTrap::attack(const std::string& target)
 {
-	if (this->hitPoints > 0 && energyPoints > 0)
+	if (/*this->hitPoints > 0 && */energyPoints > 0)
 	{
 		std::cout << "ClapTrap " << name << " attacks " << target << " caising " << attackDamage << " points of damage!" << std::endl;
 		energyPoints -= 1;

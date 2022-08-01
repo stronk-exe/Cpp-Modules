@@ -13,12 +13,14 @@
 #include "ClapTrap.hpp"
 #include "ScavTrap.hpp"
 #include "FragTrap.hpp"
+#include "DiamondTrap.hpp"
 
 int main()
 {
 	// ClapTrap ct("stronk");
 	// ScavTrap st("goat");
 	// FragTrap ft("lmsmn");
+	// DiamondTrap dt("lfloss");
 	// ct.attack("lwz");
 	// ct.beRepaired(2);
 	// ct.takeDamage(1);
@@ -30,23 +32,17 @@ int main()
 	// ft.beRepaired(22);
 	// ft.takeDamage(11);
 	// ft.highFivesGuys();
-	ScavTrap Hero("Hero");
-
-	Hero.attack("Enemy");
+	// whoAmI();
+	DiamondTrap	Hero("Hero");
+	
+	Hero.attack("enemy");
+	Hero.takeDamage(20);
 	Hero.beRepaired(10);
 	Hero.guardGate();
-	Hero.takeDamage(66666);
-	Hero.attack("last Enemy");
-	Hero.guardGate();
+	Hero.highFivesGuys();
+	Hero.whoAmI();
+	Hero.takeDamage(9999);
+	Hero.attack("last one");
+	Hero.whoAmI();
 
-	std::cout << std::endl << "************************" << std::endl << std::endl;
-
-	FragTrap Enemy("Hero");
-
-	Enemy.attack("Human");
-	Enemy.beRepaired(10);
-	Enemy.highFivesGuys();
-	Enemy.takeDamage(66666);
-	Enemy.attack("last Human");
-	Enemy.highFivesGuys();
 }

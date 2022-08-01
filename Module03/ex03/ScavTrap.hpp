@@ -1,23 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   FragTrap.hpp                                       :+:      :+:    :+:   */
+/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ael-asri <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/24 13:30:39 by ael-asri          #+#    #+#             */
-/*   Updated: 2022/07/24 13:30:41 by ael-asri         ###   ########.fr       */
+/*   Created: 2022/07/24 13:15:59 by ael-asri          #+#    #+#             */
+/*   Updated: 2022/07/24 13:16:00 by ael-asri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FRAGTRAP_HPP
-#define FRAGTRAP_HPP
+#ifndef SCAVTRAP_HPP
+#define SCAVTRAP_HPP
 
 #include <iostream>
 #include <string>
 #include "ClapTrap.hpp"
 
-class FragTrap : public ClapTrap
+class ScavTrap : virtual public ClapTrap
 {
 	// private:
 	// 	std::string name;
@@ -25,14 +25,14 @@ class FragTrap : public ClapTrap
 	// 	int			energyPoints;
 	// 	int			attackDamage;
 	public:
-		FragTrap();
-		FragTrap( std::string );
-		// ClapTrap & operator=( ClapTrap const & c );
-		~FragTrap();
+		ScavTrap();
+		ScavTrap( std::string );
+		ScavTrap & operator=( ScavTrap const & st );
+		~ScavTrap();
 		void attack(const std::string& target);
 		// void takeDamage(unsigned int amount);
 		// void beRepaired(unsigned int amount);
-		void highFivesGuys(void);
+		void guardGate();
 };
 
 #endif

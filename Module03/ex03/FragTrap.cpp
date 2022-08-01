@@ -15,6 +15,10 @@
 FragTrap::FragTrap()
 {
 	std::cout << "FragTrap Default constractor called!" << std::endl;
+	name = "stronk";
+	hitPoints = 100;
+	energyPoints = 100;
+	attackDamage = 30;
 }
 
 FragTrap::FragTrap( std::string _name )

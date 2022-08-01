@@ -10,10 +10,12 @@
 #                                                                              #
 # **************************************************************************** #
 
-NAME = ScavTrap
+NAME = DiamondTrap
 
 SRCS =  ClapTrap.cpp\
 		ScavTrap.cpp\
+		FragTrap.cpp\
+		DiamondTrap.cpp\
 		main.cpp
 
 OBJS = $(SRCS:.cpp=.o)

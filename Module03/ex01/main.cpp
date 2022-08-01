@@ -15,13 +15,22 @@
 
 int main()
 {
-	ClapTrap ct("stronk");
-	ScavTrap st("goat");
-	ct.attack("lwz");
-	ct.beRepaired(2);
-	ct.takeDamage(1);
-	st.attack("zombies");
-	st.beRepaired(22);
-	st.takeDamage(11);
-	st.guardGate();
+	// ClapTrap ct("stronk");
+	// ScavTrap st("goat");
+	// ct.attack("lwz");
+	// ct.beRepaired(2);
+	// ct.takeDamage(1);
+	// st.attack("zombies");
+	// st.beRepaired(22);
+	// st.takeDamage(11);
+	// st.guardGate();
+	ScavTrap Hero("Hero");
+
+	Hero.attack("Enemy");
+	Hero.beRepaired(10);
+	Hero.guardGate();
+	Hero.takeDamage(66666);
+	Hero.attack("last Enemy");
+	Hero.guardGate();
+
 }

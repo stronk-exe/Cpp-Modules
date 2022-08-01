@@ -19,15 +19,15 @@
 
 class ScavTrap : public ClapTrap
 {
-	private:
-		std::string name;
-		int			hitPoints;
-		int			energyPoints;
-		int			attackDamage;
+	// private:
+	// 	std::string name;
+	// 	int			hitPoints;
+	// 	int			energyPoints;
+	// 	int			attackDamage;
 	public:
 		ScavTrap();
 		ScavTrap( std::string );
-		// ClapTrap & operator=( ClapTrap const & c );
+		ScavTrap & operator=( ScavTrap const & st );
 		~ScavTrap();
 		void attack(const std::string& target);
 		// void takeDamage(unsigned int amount);
